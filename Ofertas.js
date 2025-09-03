@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log("Conectado a Mongo Atlas"))
 .catch(err => console.error("Error al conectar", err))
 
-// Definir el modelo de Fruta
+// Definir el modelo 
 const ofertaSchema = new mongoose.Schema({
 nombreProducto: { type: String, required: true },
 precioVenta: { type: Number, required: true },
@@ -94,19 +94,4 @@ app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
 
-
-
-// app.put("/api/ofertas/:id", async (req, res) => {
-//   try {
-//     const ofertaActualizada = await Oferta.findByIdAndUpdate(
-//       req.params.id,
-//       req.body,
-//       { new: true }
-//     );
-//     if (!ofertaActualizada) return res.status(404).json({ error: "Oferta no encontrada" });
-//     res.json(ofertaActualizada);
-//   } catch (error) {
-//     res.status(400).json({ error: "Error al actualizar la oferta" });
-//   }
-// });
 
